@@ -95,6 +95,13 @@ body {
     font-weight: 400;
 }
 
+/* Lucide (and other SVG) checkmarks keep alignment with feature text */
+svg.checkmark {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
 .download-button {
     margin-top: auto;
     width: fit-content;
