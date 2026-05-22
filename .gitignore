@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+src/dist/
+
+# Vite
+.vite/
+
+# Environment
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
