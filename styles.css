@@ -1,37 +1,56 @@
+/* ==========================================================================
+   Reset — consistent sizing across browsers
+   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Padding and border count inside element width */
 }
+
+
+/* ==========================================================================
+   Page — full-viewport canvas, centered content
+   ========================================================================== */
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f7f7f4;
+    background-color: #f7f7f4; /* Page background */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    justify-content: center;   /* Center cards horizontally */
+    align-items: center;       /* Center cards vertically */
+    min-height: 100vh;         /* At least full screen height */
+    padding: 20px;             /* Breathing room on small screens */
 }
+
+
+/* ==========================================================================
+   Cards row — side-by-side pricing cards
+   ========================================================================== */
 
 .cards-container {
     display: flex;
     flex-direction: row;
-    gap: 24px;
-    flex-wrap: nowrap;
+    gap: 24px;                 /* Space between cards */
+    flex-wrap: nowrap;         /* Keep cards on one row */
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start;   /* Align card tops */
 }
+
+
+/* ==========================================================================
+   Card — single pricing plan panel
+   ========================================================================== */
 
 .card {
     display: flex;
-    flex-direction: column;
-    min-height: 380px;
-    background-color: #f2f1ed;
+    flex-direction: column;    /* Stack content top → bottom */
+    min-height: 380px;         /* Equal card height */
+    background-color: #f2f1ed; /* Card surface */
     border-radius: 4px;
-    padding: 16px;
-    width: 320px;
-    flex-shrink: 0;
+    padding: 16px;             /* Inner padding */
+    width: 320px;              /* Fixed card width */
+    flex-shrink: 0;            /* Don't shrink when row is tight */
 }
 
 .card-top {
@@ -39,19 +58,24 @@ body {
     flex-direction: column;
 }
 
+
+/* ==========================================================================
+   Typography — plan name and price
+   ========================================================================== */
+
 .card-title {
     font-size: 22px;
     line-height: 28px;
     font-weight: 400;
-    color: #26251e;
+    color: #26251e;            /* Primary text */
     margin-bottom: 8px;
 }
 
 .card-price {
     font-size: 20px;
-    color: rgba(38, 37, 30, 0.5);
+    color: rgba(38, 37, 30, 0.5); /* Muted price row */
     display: inline-flex;
-    align-items: baseline;
+    align-items: baseline;     /* Align amount and “/mo.” on baseline */
 }
 
 .card-price-amount {
@@ -61,29 +85,34 @@ body {
 }
 
 .card-price-period {
-    font-size: 14px;
+    font-size: 14px;           /* Smaller than amount */
     color: rgba(38, 37, 30, 0.5);
 }
 
+
+/* ==========================================================================
+   Features — list label, rows, checkmark
+   ========================================================================== */
+
 .card-content {
-    margin-bottom: 32px;
+    margin-bottom: 32px;       /* Space above the button */
 }
 
 .includes-text {
     font-size: 16px;
-    color: rgba(38, 37, 30, 0.5);
+    color: rgba(38, 37, 30, 0.5); /* Section label (“Includes:”, etc.) */
     margin: 16px 0px;
 }
 
 .features-list {
-    list-style: none;
+    list-style: none;          /* Remove default bullets */
     padding: 0;
 }
 
 .features-list li {
     display: flex;
-    align-items: center;
-    margin-bottom: 8px;
+    align-items: center;       /* Vertically center checkmark + text */
+    margin-bottom: 8px;        /* Space between feature rows */
     font-size: 16px;
     color: #26251e;
 }
@@ -91,16 +120,21 @@ body {
 .checkmark {
     color: #26251e;
     font-size: 14px;
-    margin-right: 10px;
+    margin-right: 10px;        /* Gap before feature text */
     font-weight: 400;
 }
 
+
+/* ==========================================================================
+   Buttons — pill CTAs (secondary + primary variants)
+   ========================================================================== */
+
 .download-button {
-    margin-top: auto;
+    margin-top: auto;          /* Push button to bottom of card */
     width: fit-content;
-    background-color: #e6e5e0;
+    background-color: #e6e5e0; /* Secondary (default) fill */
     border: none;
-    border-radius: 999px;
+    border-radius: 999px;      /* Full pill shape */
     padding: 14px 24px;
     font-size: 16px;
     font-weight: 500;
@@ -117,6 +151,7 @@ body {
     background-color: #D8D6CE;
 }
 
+/* Primary variant: dark button (add class "primary" on the element) */
 .download-button.primary {
     background-color: #111;
     color: #fff;
@@ -130,11 +165,16 @@ body {
     background-color: #333;
 }
 
+
+/* ==========================================================================
+   Page label — fixed badge (dev/demo only)
+   ========================================================================== */
+
 .page-label {
     position: fixed;
     top: 16px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Center horizontally */
     font-size: 14px;
     color: #666;
     background: #fff;
