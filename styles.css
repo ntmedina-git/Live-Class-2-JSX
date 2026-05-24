@@ -165,6 +165,20 @@ body {
     background-color: #333;
 }
 
+/* Tertiary variant: outlined button (add class "tertiary" on the element) */
+.download-button.tertiary {
+    background-color: transparent;
+    border: 1px solid #c2c1ba;
+    color: #333;
+}
+
+.download-button.tertiary:hover {
+    background-color: #dbdbd7;
+}
+
+.download-button.tertiary:active {
+    background-color: #dbdbd7;
+}
 
 /* ==========================================================================
    Page label — fixed badge (dev/demo only)
