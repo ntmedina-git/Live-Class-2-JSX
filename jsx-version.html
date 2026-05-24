@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- lucide-react UMD expects global `react` (lowercase); React UMD exposes `React` -->
+    <script>window.react = window.React;</script>
+    <script src="https://unpkg.com/lucide-react@0.460.0/dist/umd/lucide-react.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
 </head>
 <body>
     <div id="root"></div>
     <script type="text/babel" data-type="module">
+        const { Check } = LucideReact;
+
         // Components can be used INSIDE other components — this is called "composition"
         // This Button component is small, but it keeps button styling/logic in one place
         // "variant" defaults to "secondary" if not provided — this is called a default parameter
@@ -38,7 +43,7 @@
                             {features.map((feature, i) => (
                                 // "key" helps React track which items changed - using index (i) is OK for static lists
                                 <li key={i}>
-                                    <span className="checkmark">✓</span>
+                                    <Check className="checkmark" size={16} strokeWidth={2} aria-hidden={true} />
                                     {feature}
                                 </li>
                             ))}
@@ -57,7 +62,7 @@
                 title: 'Hobby',
                 price: 'Free',
                 includesText: 'Includes:',
-                features: ['No credit card required', 'Limited Agent requests', 'Limited Tab completions'],
+                features: ['No credit card required', 'Limited Agent requests'],
                 buttonText: 'Download',
                 buttonVariant: 'secondary',
             };
